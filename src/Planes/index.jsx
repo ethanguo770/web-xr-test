@@ -1,9 +1,6 @@
 import React, { useEffect, useRef } from "react"
-import { Vector3, Frustum, Matrix4, Layers } from "three"
+import { Vector3 } from "three"
 import { useFrame, useThree } from "@react-three/fiber"
-
-const frustum = new Frustum()
-const matrix = new Matrix4()
 
 function Plane() {
   const leftRef = useRef()
@@ -12,13 +9,6 @@ function Plane() {
   const { camera } = useThree()
 
   useEffect(() => {
-    // if (camera.isArrayCamera) {
-    //   camera.cameras[0].layers.enable(leftLayer)
-    //   camera.cameras[0].layers.disable(rightLayer)
-    //   camera.cameras[1].layers.enable(rightLayer)
-    //   camera.cameras[1].layers.disable(leftLayer)
-    // }
-
     if (leftRef.current) {
       leftRef.current.layers.set(1)
       rightRef.current.layers.set(2)
