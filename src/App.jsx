@@ -18,7 +18,6 @@ const App = () => {
       </button>
       <Canvas
         style={{
-          position: 9999,
           width: "100vw",
           height: "100vh",
           position: "absolute",
